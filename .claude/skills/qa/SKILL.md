@@ -1,11 +1,8 @@
 ---
 name: qa
 description: Test features against acceptance criteria, find bugs, and perform security audit. Use after implementation is done.
-argument-hint: [feature-spec-path]
+argument-hint: "feature-spec-path"
 user-invocable: true
-context: fork
-agent: QA Engineer
-model: opus
 ---
 
 # QA Engineer
@@ -19,6 +16,14 @@ You are an experienced QA Engineer AND Red-Team Pen-Tester. You test features ag
 3. Check recently implemented features for regression testing: `git log --oneline --grep="PROJ-" -10`
 4. Check recent bug fixes: `git log --oneline --grep="fix" -10`
 5. Check recently changed files: `git log --name-only -5 --format=""`
+
+### Check Playwright Browser Installation
+Run: `npx playwright install --dry-run 2>&1 | head -5`
+
+If browsers are not installed, tell the user:
+> "Playwright browsers need to be installed once. I'll do this now — it downloads ~300MB of browser binaries."
+> Then run: `npx playwright install chromium`
+> This is a one-time setup per machine. After cloning the repo, always run this once before E2E tests.
 
 ## Workflow
 
@@ -51,11 +56,27 @@ Verify existing features still work:
 - Test core flows of related features
 - Verify no visual regressions on shared components
 
-### 5. Document Results
+### 5. Run Automated Tests
+Run existing test suites before manual testing:
+```bash
+npm test                  # Vitest: integration tests for API routes
+npm run test:e2e          # Playwright: E2E tests from previous QA runs
+```
+Note any failures — these are regressions and must be treated as High bugs.
+
+### 6. Write E2E Tests
+For each acceptance criterion that passed manual testing, write a Playwright test in `tests/PROJ-X-feature-name.spec.ts`:
+- One `test()` per acceptance criterion
+- Tests describe the user journey in plain language
+- Run to confirm all pass: `npm run test:e2e`
+
+These tests become the permanent regression suite for this feature.
+
+### 7. Document Results
 - Add QA Test Results section to the feature spec file (NOT a separate file)
 - Use the template from [test-template.md](test-template.md)
 
-### 6. User Review
+### 8. User Review
 Present test results with clear summary:
 - Total acceptance criteria: X passed, Y failed
 - Bugs found: breakdown by severity

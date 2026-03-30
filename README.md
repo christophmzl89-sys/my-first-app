@@ -12,6 +12,7 @@ This template uses [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
 git clone https://github.com/YOUR_USERNAME/ai-coding-starter-kit.git my-project
 cd my-project
 npm install
+npx playwright install chromium   # one-time: installs browser for E2E tests (~300MB)
 ```
 
 ### 2. (Optional) Supabase Setup
@@ -301,10 +302,13 @@ Standalone guides in `docs/production/`:
 ## Scripts
 
 ```bash
-npm run dev        # Development server (localhost:3000)
-npm run build      # Production build
-npm run start      # Production server
-npm run lint       # ESLint
+npm run dev          # Development server (localhost:3000)
+npm run build        # Production build
+npm run start        # Production server
+npm run lint         # ESLint
+npm test             # Vitest: integration tests for API routes
+npm run test:e2e     # Playwright: E2E tests for user flows
+npm run test:all     # Run both test suites
 ```
 
 ---
