@@ -14,13 +14,13 @@
 
 | ID | Feature | Status | Spec | Created |
 |----|---------|--------|------|---------|
-| PROJ-1 | User Authentication | Approved | [Spec](PROJ-1-user-authentication.md) | 2026-03-31 |
-| PROJ-2 | Gruppenverwaltung (Admin) | Approved | [Spec](PROJ-2-group-management.md) | 2026-03-31 |
-| PROJ-3 | Stundenplan-Verwaltung (Admin) | Approved | [Spec](PROJ-3-schedule-management.md) | 2026-03-31 |
-| PROJ-4 | Wochenplan-Ansicht (Teilnehmer) | Approved | [Spec](PROJ-4-weekly-schedule-view.md) | 2026-03-31 |
-| PROJ-5 | PWA-Setup | Approved | [Spec](PROJ-5-pwa-setup.md) | 2026-03-31 |
+| PROJ-1 | User Authentication | Deployed | [Spec](PROJ-1-user-authentication.md) | 2026-03-31 |
+| PROJ-2 | Gruppenverwaltung (Admin) | Deployed | [Spec](PROJ-2-group-management.md) | 2026-03-31 |
+| PROJ-3 | Stundenplan-Verwaltung (Admin) | Deployed | [Spec](PROJ-3-schedule-management.md) | 2026-03-31 |
+| PROJ-4 | Wochenplan-Ansicht (Teilnehmer) | Deployed | [Spec](PROJ-4-weekly-schedule-view.md) | 2026-03-31 |
+| PROJ-5 | PWA-Setup | Deployed | [Spec](PROJ-5-pwa-setup.md) | 2026-03-31 |
 
-| PROJ-6 | Kursmaterialien (PDF-Upload) | Approved | [Spec](PROJ-6-course-materials.md) | 2026-03-31 |
+| PROJ-6 | Kursmaterialien (PDF-Upload) | Deployed | [Spec](PROJ-6-course-materials.md) | 2026-03-31 |
 
 | PROJ-7 | ~~Kalenderansicht (Teilnehmer)~~ | Cancelled | [Spec](PROJ-7-calendar-view.md) | 2026-03-31 |
 
