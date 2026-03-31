@@ -37,6 +37,13 @@ yarn-error.log*
 # MCP configuration
 .mcp.json
 
+# PWA service worker (generated at build time)
+public/sw.js
+public/sw.js.map
+public/swe-worker-*.js
+public/workbox-*.js
+public/workbox-*.js.map
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
